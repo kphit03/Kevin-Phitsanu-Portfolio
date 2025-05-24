@@ -1,0 +1,45 @@
+/* Simple Global CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+  
+html, body {
+    height: 100%;
+    scroll-behavior: smooth;
+    background-color: #788BFF;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #5465FF;
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navLeft {
+    margin-left: 10%;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+.navRight {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-right: 10%;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.navbar a {
+    color: #FFF;
+    text-decoration: none;
+}
+  
