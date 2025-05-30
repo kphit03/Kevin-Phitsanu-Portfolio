@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <script src="/Kevin-Phitsanu-Portfolio/script.js"></script>:
+    
 </head>
 <body>
     <div class="navbar">
@@ -88,18 +88,78 @@
 
         <section class="projectsContainer">
             <h1>Projects</h1>
-
-            <div class="projectCard">
-                <h3>Project 1</h3>
-                <img src="/Kevin-Phitsanu-Portfolio/images/maxresdefault.jpg" alt="">
-                <button>View Details</button>
-                <!-- Hidden Until the view details is clicked is clicked -->
-                <div class="projectDetails">
-                    <p>Tech Stack Used</p>
-                    <p>Detailed Description Here</p>
+            
+            <div class="projects-grid">
+                <!-- Visible Projects -->
+                <div class="projectCard">
+                    <h3>Project 1</h3>
+                    <img src="/Kevin-Phitsanu-Portfolio/images/maxresdefault.jpg" alt="">
+                    <button onclick="hideShow(this)" class="hideShowBtn">View Details</button>
+                    <div class="projectDetails">
+                        <p>Tech Stack Used</p>
+                        <p>Detailed Description Here</p>
+                    </div>
                 </div>
+        
+                <div class="projectCard">
+                    <h3>Project 2</h3>
+                    <img src="/Kevin-Phitsanu-Portfolio/images/maxresdefault.jpg" alt="">
+                    <button onclick="hideShow(this)" class="hideShowBtn">View Details</button>
+                    <div class="projectDetails">
+                        <p>Tech Stack Used</p>
+                        <p>Another description here</p>
+                    </div>
+                </div>
+
+                <div class="projectCard">
+                    <h3>Project 3</h3>
+                    <img src="/Kevin-Phitsanu-Portfolio/images/maxresdefault.jpg" alt="">
+                    <button onclick="hideShow(this)" class="hideShowBtn">View Details</button>
+                    <div class="projectDetails">
+                        <p>Tech Stack Used</p>
+                        <p>Another description here</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="toggleExtraBtn" onclick="toggleExtraProjects()">View More Projects</button>
+            <!-- Hidden Projects Section -->
+            <div class="extraProjects hiddenProjects">
+                <div class="projects-grid">
+
+                    <div class="projectCard">
+                        <h3>Project 4</h3>
+                        <img src="/Kevin-Phitsanu-Portfolio/images/maxresdefault.jpg" alt="">
+                        <button onclick="hideShow(this)" class="hideShowBtn">View Details</button>
+                        <div class="projectDetails">
+                            <p>Tech Stack Used</p>
+                            <p>Another description here</p>
+                        </div>
+                    </div>
+                    <div class="projectCard">
+                        <h3>Project 5</h3>
+                        <img src="/Kevin-Phitsanu-Portfolio/images/maxresdefault.jpg" alt="">
+                        <button onclick="hideShow(this)" class="hideShowBtn">View Details</button>
+                        <div class="projectDetails">
+                            <p>Tech Stack Used</p>
+                            <p>Another description here</p>
+                        </div>
+                    </div>
+                    <div class="projectCard">
+                        <h3>Project 6</h3>
+                        <img src="/Kevin-Phitsanu-Portfolio/images/maxresdefault.jpg" alt="">
+                        <button onclick="hideShow(this)" class="hideShowBtn">View Details</button>
+                        <div class="projectDetails">
+                            <p>Tech Stack Used</p>
+                            <p>Another description here</p>
+                        </div>
+                    </div>
+
+                </div>
+                
             </div>
         </section>
     </div>
+    <script src="/Kevin-Phitsanu-Portfolio/script.js"></script>
 </body>
 </html>
