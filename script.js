@@ -2,12 +2,14 @@
 function hideShow(button) {
   const projectCard = button.parentElement;
   const details = projectCard.querySelector('.projectDetails');
+
+  const isVisible = details.classList.contains('show');
   
-  if (details.style.display === 'block') { //hide details
-    details.style.display = 'none';
+  if (isVisible) {
+    details.classList.remove('show');
     button.innerText = "View Details";
-  } else { //show details
-    details.style.display = 'block';
+  } else {
+    details.classList.add('show');
     button.innerText = "Hide Details";
   }
 }
@@ -15,16 +17,16 @@ function hideShow(button) {
 // Show/Hide function for the hidden/extra projects
 var expandedProjects = false;
 
-function toggleExtraProjects() { //onclick funciton
-  const hiddenProjects = document.querySelector(".extraProjects"); //grab the extra projects section from dom (hidden by default on html)
-  const toggleBtn = document.querySelector(".toggleExtraBtn"); //grab the button from the dom (to change the text)
+function toggleExtraProjects() {
+  const hiddenProjects = document.querySelector(".hiddenProjects");
+  const toggleBtn = document.querySelector(".toggleExtraBtn");
 
   if (!expandedProjects) {
-    hiddenProjects.classList.remove("hiddenProjects"); // remove hidden class 
+    hiddenProjects.classList.add("show"); // trigger smooth expand
     toggleBtn.textContent = "Hide Extra Projects";
     expandedProjects = true;
   } else {
-    hiddenProjects.classList.add("hiddenProjects"); // add hidden class 
+    hiddenProjects.classList.remove("show"); // trigger collapse
     toggleBtn.textContent = "View More Projects";
     expandedProjects = false;
   }
@@ -75,3 +77,54 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+//download resume button
+document.getElementById('download-resume').addEventListener('click', function () {
+  const link = document.createElement('a'); //programmatically added link on download-resume, can do this in html but wanted to do it in js for fun
+  link.href = '/Kevin-Phitsanu-Portfolio/docs/Kevin Phitsanu Resume.pdf';
+  link.download = 'Kevin Phitsanu Resume.pdf'; //download goes to this file
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+})
+
+//intersection observer scroll animation
+
+//projects section
+const projectCards = document.querySelectorAll('.projectCard'); //grab project cards
+
+const observer = new IntersectionObserver((entries) => { //intersection observer used here
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      const card = entry.target;
+      // Staggered animation: each card gets a slight delay
+      card.style.animationDelay = `${index * 0.2}s`;
+      card.classList.add('animate-in');
+      observer.unobserve(card); // Animate once per card
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+projectCards.forEach((card) => {
+  observer.observe(card);
+});
+
+
+//animation for exp section
+const experienceCards = document.querySelectorAll('.expCard');
+
+const expObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationDelay = `${index * 0.15}s`;
+      entry.target.classList.add('animate-in');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.2,
+});
+
+experienceCards.forEach(card => expObserver.observe(card));

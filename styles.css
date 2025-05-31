@@ -6,7 +6,7 @@
 }
 
 :root {
-    --duration: 9s;
+    --duration: 35s;
     --totalitems: 9;
 }
 html, body {
@@ -172,8 +172,8 @@ html, body {
     max-width: 400px;
 }
 .aboutContainer {
-    max-width: 80%;
-    margin-left: 10%;
+    max-width: 90%;
+    margin-left: 5%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -220,7 +220,7 @@ html, body {
 }
 
 .skillsContainer {
-    margin-top: 10rem;
+    margin: 10rem auto 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -267,11 +267,16 @@ html, body {
 /* Project section */
 .projectsContainer {
     max-width: 80%;
-    margin: 6rem auto;
+    margin: 10rem auto 1rem auto;
     padding: 2rem;
     font-family: 'Montserrat';
   }
-  
+.projectsContainer h1 {
+    text-align: center;
+    color: #5465FF;
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
 .projectCard {
     background-color: #f5f7ff;
     border-radius: 1rem;
@@ -280,14 +285,14 @@ html, body {
     margin-bottom: 2rem;
     transition: box-shadow 0.3s ease;
 }
-  
+
 .projectCard:hover {
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
 }
   
 .projectCard img {
     width: 100%;
-    max-height: 180px;
+    max-height: 300px;
     aspect-ratio: 16 / 9;
     object-fit: contain;
     border-radius: 0.5rem;
@@ -300,15 +305,18 @@ html, body {
 }
   
 .projectDetails {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease, opacity 0.2s ease, padding-top 0.2s ease;
+    padding-top: 0;
     margin-top: 1rem;
-    display: none;
     font-size: 1rem;
     color: #333;
-    transition: max-height .3s ease, opacity 0.3s ease, padding-top 0.3s ease;
 }
 
 .projectDetails.show {
-    max-height: 200px;
+    max-height: 500px; /* or larger if your content needs it */
     opacity: 1;
     padding-top: 1rem;
 }
@@ -321,6 +329,7 @@ html, body {
     border-radius: 0.5rem;
     cursor: pointer;
     font-weight: 500;
+    font-size: 1rem;
     transition: background-color 0.3s ease;
 }
   
@@ -338,7 +347,15 @@ html, body {
   
 /* Projects Section Cont. (Hidden Cards) */
 .hiddenProjects {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+.hiddenProjects.show {
+    max-height: 2000px;
+    opacity: 1;
 }
 
 .extraProjects {
@@ -367,15 +384,16 @@ html, body {
 /* Experience Section */
 .expContainer {
     max-width: 80%;
-    margin: 6rem auto;
-    padding: 2rem;
+    margin: 1rem auto;
+    padding: 1rem;
     font-family: 'Montserrat', sans-serif;
 }
   
 .expContainer h1 {
     text-align: center;
-    color: #2d42ff;
+    color: #5465FF;
     margin-bottom: 0.5rem;
+    font-size: 2rem;
 }
 .expCard h2 {
     color: #5465FF;
@@ -400,6 +418,7 @@ html, body {
     margin-bottom: 0.6rem;
     line-height: 1.5;
     color: #333;
+    font-size: 1.4rem;
 }
 
 .expContainer > p {
@@ -439,11 +458,11 @@ html, body {
 .expCard {
     display: flex;
     flex-direction: column;
-    background-color: rgb(231, 231, 231); /* semi-transparent white */
-    padding: 1.5rem;
+    background-color: #f5f7ff; /* semi-transparent white */
+    padding: 3rem 4rem 3rem 4rem;
     border-radius: 1rem;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    margin: 2rem 0;
+    margin: 4rem 0;
     width: 60%;
 }
   
@@ -541,6 +560,16 @@ form#contact-form button:hover {
     color: #2d42ff;
 }
 
+.footer {
+    background: #5465ff;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.2rem;
+}
 /* responsiveness jazz */
 
 /* about section responsive */
@@ -635,4 +664,56 @@ form#contact-form button:hover {
   }
   
   
-  
+/* for intersection observer */
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(20px);
+  }
+  80% {
+    transform: translateX(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Prepare cards to animate in */
+.projectCard {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+/* This gets added when card is in view */
+.projectCard.animate-in {
+  animation: bounceInLeft 0.8s ease forwards;
+}
+
+/* slide animation for exp section */
+/* Slide and fade in animation for experience cards */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.expCard {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.expCard.animate-in {
+  animation: fadeSlideIn 0.6s ease forwards;
+}
