@@ -344,7 +344,7 @@ html, body {
     margin-top: 2rem;
     align-items: start;
 }
-  
+ 
 /* Projects Section Cont. (Hidden Cards) */
 .hiddenProjects {
     max-height: 0;
@@ -358,16 +358,12 @@ html, body {
     opacity: 1;
 }
 
-.extraProjects {
-    margin-top: 4rem;
-}
-
 .toggleExtraBtn {
     display: block;
     margin: 2rem auto;
     padding: 0.75rem 1.5rem;
-    background-color: #a8ff78;
-    color: #000;
+    background-color: #ffc400;
+    color: #000000;
     border: none;
     border-radius: 0.5rem;
     font-size: 1rem;
@@ -377,7 +373,7 @@ html, body {
   }
   
 .toggleExtraBtn:hover {
-    background-color: #78ffd6;
+    background-color: #fbffbd;
     transform: translateY(-2px);
 }
 
@@ -430,7 +426,7 @@ html, body {
 
 .downloadBtn {
     display: block;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto 0 auto;
     padding: 0.75rem 1.5rem;
     background-color: #5465ff;
     color: white;
@@ -453,7 +449,15 @@ html, body {
     transform: translateY(-2px);
 }
   
-  
+#openNewTab {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+#or {
+    margin-bottom: .5rem;
+    margin-top: .5rem;
+}
   /* Base styling for each experience card */
 .expCard {
     display: flex;
@@ -465,7 +469,7 @@ html, body {
     margin: 4rem 0;
     width: 60%;
 }
-  
+
   /* Alternate left/right layout */
 .expCard:nth-child(even) {
     margin-left: auto;
