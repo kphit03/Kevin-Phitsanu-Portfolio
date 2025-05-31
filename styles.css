@@ -10,11 +10,12 @@
     --totalitems: 9;
 }
 html, body {
-    height: 100%;
+    height: auto;
     scroll-behavior: smooth;
     background-color: #ffffff;
     font-family: "Inter", "Montserrat", Arial, Helvetica, sans-serif;
     font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+    overflow-x: hidden;
 }
 
 section {
@@ -26,12 +27,17 @@ section {
     align-items: center;
     justify-content: space-between;
     background-color: #5465FF;
-    padding: 1.4rem 2rem;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  height: auto; /* important: allow height to grow naturally */
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
     position: relative;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    margin-bottom: 3rem;
 }
 
 .navLeft {
@@ -55,6 +61,18 @@ section {
     color: #FFF;
     text-decoration: none;
 }
+.navbar.hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+  padding-top: 0;
+  padding-bottom: 0;
+}
 
 .hamburger {
     display: none;
@@ -74,63 +92,81 @@ section {
   }
   
   @media (max-width: 768px) {
-    .navbar {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    .hamburger {
-      display: flex;
-    }
-  
-    .navRight {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        background-color: #5465FF;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 10;
-    
-        /* Animation setup */
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transition: max-height 0.4s ease, opacity 0.4s ease;
-        padding: 1rem;
-      }
-    
-      .navRight.show {
-        max-height: 300px; /* adjust based on how many items */
-        opacity: 1;
-      }
+    /* Navbar Container */
+/* Ensure navbar layout is responsive */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+/* Show hamburger menu only on mobile */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001; /* Make sure it's clickable */
+  position: relative;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* navRight hidden by default */
+  .navRight {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #5465FF;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 999;
+    padding-bottom: 2rem;
+  }
+
+  .navRight.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
   }
   
 /* top container styling (profile pic and intro text) */
 
 .topContainer {
-    max-width: 80%;
-    margin-left: 10%;
     padding: 2rem;
     border-radius: 1.5rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 4rem;
-    margin-top: 5rem;
-    background: #e3e6eb;
+    background: #f9fbff;
     font-family: "Montserrat";
     flex-wrap: wrap;
     /* for hover animation */
     border: 2px solid transparent;
-    transition: box-shadow .3s ease-in-out;
 }
 
-.topContainer:hover {
-    box-shadow: 0 0 36px rgba(84, 101, 255, 0.2);
+body.lock-scroll {
+  overflow: hidden;
 }
+
+
 .topContainer img {
     max-width: 400px;
     border: .2rem #0d1666 solid;
@@ -376,7 +412,7 @@ section {
   }
   
 .toggleExtraBtn:hover {
-    background-color: #fbffbd;
+    background-color: #ffa600;
     transform: translateY(-2px);
 }
 
@@ -839,3 +875,38 @@ form#contact-form button:hover {
     transform: translateY(-20px);
   }
 }
+
+#alternatively {
+  font-size: 1rem;
+  color: #4e59be;
+}
+
+.navbar a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffc400; /* Slight color accent on hover */
+}
+
+.navbar a:hover::after {
+  transform: scaleX(1); /* Slide in underline */
+}
+
+

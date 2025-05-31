@@ -66,17 +66,7 @@ window.onload = function() {
   });
 }
 
-//hamburger menu
-document.addEventListener("DOMContentLoaded", function () {
-  const hamburger = document.querySelector('.hamburger');
-  const navRight = document.querySelector('.navRight');
 
-  if (hamburger && navRight) {
-    hamburger.addEventListener('click', function () {
-      navRight.classList.toggle('show');
-    });
-  }
-});
 
 //download resume button
 document.getElementById('download-resume').addEventListener('click', function () {
@@ -135,17 +125,22 @@ experienceCards.forEach(card => expObserver.observe(card));
 //back to top button
 
 const backToTopBtn = document.getElementById("backToTopBtn");
-
-window.addEventListener('scroll', () => {
+// back to top scroll visibility handler
+function toggleBackToTop() {
   if (window.scrollY > 100) {
-    backToTopBtn.classList.add('show'); // adds fade-in
+    backToTopBtn.classList.add('show');
+    console.log("ScrollY:", window.scrollY);
   } else {
-    backToTopBtn.classList.remove('show'); // triggers fade-out
+    backToTopBtn.classList.remove('show');
   }
-});
+}
+
+window.addEventListener('scroll', toggleBackToTop);
+
 
 
 backToTopBtn.addEventListener("click", () => {
+  console.log("clicked");
   window.scrollTo({
     top: 0,
     behavior: "smooth"
@@ -164,3 +159,96 @@ function showToast(message, type = 'success') {
     toast.remove();
   }, 3000); // Toast lasts for 3s
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const topContainer = document.querySelector('.topContainer');
+  const navbar = document.querySelector('.navbar');
+  const hamburger = document.querySelector('.hamburger');
+  const navRight = document.querySelector('.navRight');
+
+  if (hamburger && navRight) {
+    hamburger.addEventListener('click', function () {
+      navRight.classList.toggle('show');
+      console.log(navRight.classList);
+    });
+  }
+  window.scrollTo(0, 0);
+  document.body.classList.add('lock-scroll');
+
+  navbar.classList.add('hidden'); // hide nav off-screen
+
+  // Initial state
+  gsap.set(topContainer, {
+    scale: 1,
+    paddingTop: '10vh',
+    paddingBottom: '10vh',
+    minHeight: '100vh',
+    opacity: 0
+  });
+
+  // Animate zoom-in
+  gsap.to(topContainer, {
+    duration: 1.5,
+    scale: 1.1,
+    opacity: 1,
+    ease: "power2.out",
+    paddingTop: '20vh',
+    paddingBottom: '20vh',
+    onStart: () => {
+      gsap.from(".topContainer h1, .topContainer h2, .topContainer h3", {
+        opacity: 0,
+        y: 20,
+        duration: 1.2,
+        ease: "power3.out",
+        stagger: 0.2
+      });
+    }
+  });
+
+  // Shrink to normal
+  gsap.to(topContainer, {
+    delay: 1.5,
+    duration: 1.2,
+    scale: 1,
+    ease: "power2.inOut",
+    paddingTop: '6rem',
+    paddingBottom: '6rem',
+    minHeight: 'auto',
+    onComplete: () => {
+      // Animate navbar into view while it's still absolute
+gsap.fromTo(navbar, {
+  y: -60,
+  opacity: 0,
+  paddingTop: 0,
+  paddingBottom: 0,
+  marginBottom: 0
+}, {
+  y: 0,
+  opacity: 1,
+  paddingTop: '1.4rem',
+  paddingBottom: '1.4rem',
+  marginBottom: '1.5rem',
+  duration: 1,
+  ease: "power2.out",
+  onStart: () => {
+    navbar.classList.remove('hidden');
+  },
+  onComplete: () => {
+    navbar.style.position = 'relative';
+    navbar.style.top = '';
+    navbar.style.left = '';
+    navbar.style.right = '';
+  }
+});
+
+
+      // Unlock scroll
+      document.body.classList.remove('lock-scroll');
+      
+
+    }
+  });
+});
+
+
+
