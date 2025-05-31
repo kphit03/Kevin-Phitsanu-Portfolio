@@ -29,3 +29,49 @@ function toggleExtraProjects() { //onclick funciton
     expandedProjects = false;
   }
 }
+
+//email service
+emailjs.init({
+  publicKey: 'w1tsgKvU80CzeQROO',
+  limitRate: {
+    id: 'contact_form',
+    throttle: 10000
+  }
+});
+
+window.onload = function() {
+  const form = document.getElementById('contact-form');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); //prevent form reloads
+
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'Sending...';
+
+    //send form function
+    emailjs.sendForm('service_21pg896', 'template_54khror', this)
+      .then(() => {
+        console.log("Successfully Sent");
+        this.reset();
+      }, (error) => {
+        console.log("Failed to send", error);
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Send Message";
+      });
+  });
+}
+
+//hamburger menu
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector('.hamburger');
+  const navRight = document.querySelector('.navRight');
+
+  if (hamburger && navRight) {
+    hamburger.addEventListener('click', function () {
+      navRight.classList.toggle('show');
+    });
+  }
+});

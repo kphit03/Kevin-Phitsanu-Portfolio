@@ -12,25 +12,31 @@
 html, body {
     height: 100%;
     scroll-behavior: smooth;
-    background-color: #fff;
+    background-color: #ffffff;
     font-family: "Inter", "Montserrat", Arial, Helvetica, sans-serif;
     font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 }
 
 /* Navbar styling */
 .navbar {
-    background-color: #5465FF;
-    padding: 1.4rem;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #5465FF;
+    padding: 1.4rem 2rem;
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
+    position: relative;
 }
 
 .navLeft {
     margin-left: 10%;
     font-weight: bold;
     font-size: 1.6rem;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 .navRight {
     display: flex;
@@ -47,6 +53,58 @@ html, body {
     text-decoration: none;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 20;
+    position: relative;
+  }
+  
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  
+    .navRight {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #5465FF;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 10;
+    
+        /* Animation setup */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.4s ease;
+        padding: 1rem;
+      }
+    
+      .navRight.show {
+        max-height: 300px; /* adjust based on how many items */
+        opacity: 1;
+      }
+  }
+  
 /* top container styling (profile pic and intro text) */
 
 .topContainer {
@@ -284,7 +342,7 @@ html, body {
 }
 
 .extraProjects {
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 .toggleExtraBtn {
@@ -305,4 +363,276 @@ html, body {
     background-color: #78ffd6;
     transform: translateY(-2px);
 }
+
+/* Experience Section */
+.expContainer {
+    max-width: 80%;
+    margin: 6rem auto;
+    padding: 2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+  
+.expContainer h1 {
+    text-align: center;
+    color: #2d42ff;
+    margin-bottom: 0.5rem;
+}
+.expCard h2 {
+    color: #5465FF;
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+  
+.expCard h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0.2rem 0;
+}
+  
+.expCard ul {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+    list-style-type: disc;
+}
+  
+.expCard li {
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.expContainer > p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 2rem;
+}
+
+.downloadBtn {
+    display: block;
+    margin: 0 auto 2rem auto;
+    padding: 0.75rem 1.5rem;
+    background-color: #5465ff;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.openNewTab {
+    display: grid;
+    margin: 0 auto 2rem auto;
+    align-items: center;
+    justify-content: center;
+}
+.downloadBtn:hover {
+    background-color: #364aff;
+    transform: translateY(-2px);
+}
+  
+  
+  /* Base styling for each experience card */
+.expCard {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(231, 231, 231); /* semi-transparent white */
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    width: 60%;
+}
+  
+  /* Alternate left/right layout */
+.expCard:nth-child(even) {
+    margin-left: auto;
+}
+  
+.expCard:nth-child(odd) {
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .expCard {
+      width: 100%;
+      margin: 1rem 0 !important;
+    }
+}
+  
+/* Animate them on scroll later */
+  
+/* Contact Section */
+.contactContainer {
+    max-width: 80%;
+    margin: 6rem auto;
+    padding: 2rem;
+    background-color: #f5f7ff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+.contactContainer h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2d42ff;
+}
+.contactSubheading {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 2rem;
+    color: #333;
+    text-align: center;
+}
+  
+form#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form#contact-form input,
+form#contact-form textarea {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+form#contact-form button {
+    padding: 0.75rem 1rem;
+    background-color: #5465ff;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form#contact-form button:hover {
+    background-color: #364aff;
+}
+
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.socialLinks a {
+    text-decoration: none;
+    color: #5465ff;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.socialLinks a:hover {
+    color: #2d42ff;
+}
+
+/* responsiveness jazz */
+
+/* about section responsive */
+@media (max-width: 768px) {
+.aboutContainer {
+      flex-direction: column;
+      align-items: center;
+}
+  
+.aboutLeft, .aboutRight {
+      width: 100%;
+      padding: 0;
+      border: none;
+      text-align: center;
+}
+  
+.aboutLeft {
+      padding-bottom: 2rem;
+}
+  
+.aboutParagraphs {
+      align-items: center;
+}
+  
+.aboutRight img {
+      max-width: 80%;
+}
+}
+
+@media (max-width: 768px) {
+    .imgWrapper {
+      height: 60px; /* smaller height for mobile */
+      width: 90vw;
+    }
+  
+    .img-item {
+      width: 60px;
+    }
+  
+    .skillsContainer {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .projectsContainer {
+      max-width: 100%;
+      padding: 1rem;
+      margin: 3rem auto;
+    }
+  
+    .projects-grid {
+      grid-template-columns: 1fr;
+      margin: 0 auto;
+    }
+  
+    .projectCard {
+      margin: 0 auto 2rem auto;
+      width: 100%;
+      max-width: 90%;
+    }
+  }
+  @media (max-width: 768px) {
+    .topContainer img {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+  
+    .topContainer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+    }
+  
+    .topContainerRight {
+      font-size: 1.5rem;
+    }
+  
+    .topContainerRight h1 {
+      font-size: 2rem;
+    }
+  
+    .topContainerRight h2 {
+      font-size: 1.6rem;
+    }
+  
+    .topContainerRight h3 {
+      font-size: 1.1rem;
+    }
+  }
+  
+  
   
