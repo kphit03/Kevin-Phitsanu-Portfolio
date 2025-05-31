@@ -29,11 +29,11 @@
         </div>
 
         <div class="navRight" id="nav-links">
-            <a href="">About</a>
-            <a href="">Skills</a>
-            <a href="">Projects</a>
-            <a href="">Experience</a>
-            <a href="">Contact</a>
+            <a href="#aboutContainer">About</a>
+            <a href="#skillsContainer">Skills</a>
+            <a href="#projectsContainer">Projects</a>
+            <a href="#expContainer">Experience</a>
+            <a href="#contactContainer">Contact</a>
         </div>
     </div>
 
@@ -50,7 +50,7 @@
 
     <div class="mainContent">
 
-        <section class="aboutContainer">
+        <section class="aboutContainer" id="aboutContainer">
             <div class="aboutLeft">
                 <h1>About Me</h1>
                 <div class="aboutParagraphs">
@@ -65,7 +65,7 @@
             </div>
         </section>
         
-        <section class="skillsContainer">
+        <section class="skillsContainer" id="skillsContainer">
             <h1>Skills</h1>
             <div class="imgWrapper">
                 <div class="img-item" style="--i:1">
@@ -98,7 +98,7 @@
             </div>
         </section>
 
-        <section class="projectsContainer">
+        <section class="projectsContainer" id="projectsContainer">
             <h1>Projects</h1>
             
             <div class="projects-grid">
@@ -173,7 +173,7 @@
         </section>
         
         <!-- Experience Section -->
-        <section class="expContainer">
+        <section class="expContainer" id="expContainer">
             <h1>Professional Experience</h1>
             <p>For those NOT interested in my League of Legends skills...</p>
 
@@ -216,7 +216,7 @@
         </section>
 
         <!-- Contact Form -->
-        <section class="contactContainer">
+        <section class="contactContainer" id="contactContainer">
             <h1>Connect With Me</h1>
 
             <div class="socialLinks">
@@ -240,8 +240,9 @@
           </section>
           
     </div>
-
+    <div id="toastContainer"></div>
     <footer class="footer">&copy Kevin Phitsanu</footer>
+    <button id="backToTopBtn"><i data-lucide="chevron-up"></i> Back to Top</button>
     <script src="/Kevin-Phitsanu-Portfolio/script.js"></script>
     <script>lucide.createIcons();</script> <!-- Icons for connect links-->
 </body>

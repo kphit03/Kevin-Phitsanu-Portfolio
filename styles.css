@@ -17,6 +17,9 @@ html, body {
     font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 }
 
+section {
+  scroll-margin-top: 80px; /* Adjust based on your navbar height */
+}
 /* Navbar styling */
 .navbar {
     display: flex;
@@ -574,6 +577,50 @@ form#contact-form button:hover {
     color: #fff;
     font-size: 1.2rem;
 }
+
+#backToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  background-color: #5465ff;
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  /* Icon + text alignment */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  /* Fade-in/out visibility control */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.2s ease;
+}
+
+/* Show class added by JS */
+#backToTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Optional hover effect */
+#backToTopBtn:hover {
+  background-color: #364aff;
+  transform: translateY(-2px);
+}
+
+#backToTopBtn i {
+  width: 20px;
+  height: 20px;
+}
+
+
 /* responsiveness jazz */
 
 /* about section responsive */
@@ -720,4 +767,75 @@ form#contact-form button:hover {
 
 .expCard.animate-in {
   animation: fadeSlideIn 0.6s ease forwards;
+}
+
+/*Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e3e6eb; /* Light background */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5465FF; /* Your theme color */
+  border-radius: 10px;
+  border: 3px solid #e3e6eb; /* Creates padding around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2d42ff;
+}
+
+/* Toast Messages */
+#toastContainer {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toast {
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #5465ff;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  animation: fadeInOut 3s ease forwards;
+  text-align: center;
+}
+
+.toast.success {
+  background-color: #28a745;
+}
+
+.toast.error {
+  background-color: #dc3545;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 }

@@ -54,10 +54,10 @@ window.onload = function() {
     //send form function
     emailjs.sendForm('service_21pg896', 'template_54khror', this)
       .then(() => {
-        console.log("Successfully Sent");
         this.reset();
+        showToast('Message sent! I will respond within 48 hours.', 'success');
       }, (error) => {
-        console.log("Failed to send", error);
+        showToast('Failed to send message. Please try again.', 'error');
       })
       .finally(() => {
         submitBtn.disabled = false;
@@ -86,6 +86,8 @@ document.getElementById('download-resume').addEventListener('click', function ()
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
+
+  showToast('Resume downloaded!', 'success');
 })
 
 //intersection observer scroll animation
@@ -128,3 +130,37 @@ const expObserver = new IntersectionObserver((entries, observer) => {
 });
 
 experienceCards.forEach(card => expObserver.observe(card));
+
+
+//back to top button
+
+const backToTopBtn = document.getElementById("backToTopBtn");
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    backToTopBtn.classList.add('show'); // adds fade-in
+  } else {
+    backToTopBtn.classList.remove('show'); // triggers fade-out
+  }
+});
+
+
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+// Toast Messages 
+function showToast(message, type = 'success') {
+  const toast = document.createElement('div');
+  toast.className = `toast ${type}`;
+  toast.textContent = message;
+
+  document.getElementById('toastContainer').appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 3000); // Toast lasts for 3s
+}
