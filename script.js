@@ -41,6 +41,7 @@ emailjs.init({
   },
 });
 
+
 window.onload = function () {
   const form = document.getElementById("contact-form");
   const submitBtn = form.querySelector('button[type="submit"]');

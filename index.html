@@ -44,7 +44,7 @@
     <div class="topContainer">
       <div class="topContainerLeft">
         <img
-          src="/Kevin-Phitsanu-Portfolio/Profile_avatar_placeholder_large.png"
+          src="/Kevin-Phitsanu-Portfolio/images/pfpl.png"
           alt="profile pic"
         />
       </div>
@@ -61,9 +61,10 @@
           <h1>About Me</h1>
           <div class="aboutParagraphs">
             <p>
-              Hey! I'm Kevin, an aspiring full-stack developer. I am current
-              pursuing my M.S. in Computer Science at Georgia Tech.
+              Hey! I'm Kevin. 
             </p>
+            <p>Based in Atlanta, I'm an aspiring full-stack developer. I am current
+              pursuing my M.S. in Computer Science at Georgia Tech.</p>
             <p>
               I have hands-on, personal project experience with full-stack
               development, and also professional IT background within
@@ -88,30 +89,27 @@
         <div class="imgWrapper">
           <div class="img-item" style="--i: 1">
             <img
-              src="/Kevin-Phitsanu-Portfolio/images/python logo.png"
+              src="/Kevin-Phitsanu-Portfolio/images/javascript logo.png"
               alt=""
             />
           </div>
           <div class="img-item" style="--i: 2">
             <img
-              src="/Kevin-Phitsanu-Portfolio/images/javascript logo.png"
-              alt=""
-            />
-          </div>
-          <div class="img-item" style="--i: 3">
-            <img
               src="/Kevin-Phitsanu-Portfolio/images/typescript logo.png"
               alt=""
             />
           </div>
-          <div class="img-item" style="--i: 4">
+          <div class="img-item" style="--i: 3">
             <img src="/Kevin-Phitsanu-Portfolio/images/java-logo3.png" alt="" />
           </div>
-          <div class="img-item" style="--i: 5">
+          <div class="img-item" style="--i: 4">
             <img
               src="/Kevin-Phitsanu-Portfolio/images/angular logo.png"
               alt=""
             />
+          </div>
+          <div class="img-item" style="--i: 5">
+            <img src="/Kevin-Phitsanu-Portfolio/images/react-icon.png" alt="" />
           </div>
           <div class="img-item" style="--i: 6">
             <img
@@ -137,54 +135,90 @@
         <div class="projects-grid">
           <!-- Visible Projects -->
           <div class="projectCard">
-            <h3>Project 1</h3>
+            <h3>LearnADC</h3>
             <img
-              src="/Kevin-Phitsanu-Portfolio/images/maxresdefault.jpg"
+              src="/Kevin-Phitsanu-Portfolio/images/learnadc.png"
               alt=""
             />
             <button onclick="hideShow(this)" class="hideShowBtn">
               View Details
             </button>
             <div class="projectDetails">
-              <p>Tech Stack Used</p>
-              <p>Detailed Description Here</p>
+              <a href="https://www.learnadc.com/dashboard" target="_blank">Visit the site!</a>
+              <h3>About:</h3>
+              <p>Tech Stack Used: <strong>Angular, Spring Boot, TypeScript, Java, MySQL, AWS, Vercel, HTML, CSS</strong></p>
+              <br>
+              <p>LearnADC is a free to use learning platform for League of Legends ADC players to take their skillset to the next level.
+                This project was built with Angular, Spring Boot, and MySQL, then deployed on AWS and Vercel. I am planning to add more courses for the users when time allows.</p>
+              <br>
+              <h3>Skills Implemented:</h3>
+              <ul>
+                <li>Responsive Web Design</li>
+                <li>RestAPI built with Spring Boot, and integrated into the application with Angular</li>
+                <li>Admin portal (add, remove, edit courses/lessons)</li>
+                <li>Spring Security implementation (JWT Auth)</li>
+                <li>Angular Routing, HTTP Client</li>
+                <li>Database integration (users, roles, courses, lessons)</li>
+              </ul>
+              <a href="https://github.com/kphit03/LearnADC" target="_blank">See the code here</a>
             </div>
           </div>
 
           <div class="projectCard">
-            <h3>Project 2</h3>
+            <h3>Find My Movie</h3>
             <img
-              src="/Kevin-Phitsanu-Portfolio/images/maxresdefault.jpg"
+              src="/Kevin-Phitsanu-Portfolio/images/find-movie.png"
               alt=""
             />
             <button onclick="hideShow(this)" class="hideShowBtn">
               View Details
             </button>
             <div class="projectDetails">
-              <p>Tech Stack Used</p>
-              <p>Another description here</p>
+              <h3>About:</h3>
+              <p>Tech Stack Used: <strong>React, JavaScript, JSX, TailwindCSS</strong></p>
+              <br>
+              <p>Find a movie and it's details with a simple search. Built with React, JavaScript, JSX, and TailwindCSS</p>
+              <br>
+              <h3>Skills Implemented:</h3>
+              <ul>
+                <li>Responsive Web Design</li>
+                <li>Search movies</li>
+                <li>State management (track search terms, error messages, loading state, and movie list)</li>
+                <li>Optimized search api calls with the hook useDebounce</li>
+              </ul>
+              <a href="https://github.com/kphit03/find-movies" target="_blank">See the code here</a>
             </div>
           </div>
 
           <div class="projectCard">
-            <h3>Project 3</h3>
+            <h3>KP Employee Management System</h3>
             <img
-              src="/Kevin-Phitsanu-Portfolio/images/maxresdefault.jpg"
+              src="/Kevin-Phitsanu-Portfolio/images/kp-ems.png"
               alt=""
             />
             <button onclick="hideShow(this)" class="hideShowBtn">
               View Details
             </button>
             <div class="projectDetails">
-              <p>Tech Stack Used</p>
-              <p>Another description here</p>
+              <h3>About:</h3>
+              <p>Tech Stack Used: <strong>Angular, Spring Boot, TypeScript, Java, HTML, CSS</strong></p>
+              <br>
+              <p>Create, update, delete, and find all your employees with the KP EMS application. Admins are able to add, remove, update, and get all employees.</p>
+              <br>
+              <h3>Skills Implemented:</h3>
+              <ul>
+                <li>Rest API (for crud functionality)</li>
+                <li>Spring Security (JWT Authorization), protect endpoints</li>
+                <li>Downloadable excel reports for all employees</li>
+              </ul>
+              <a href="https://github.com/kphit03/employee-management-system" target="_blank">See the code here</a>
             </div>
           </div>
         </div>
 
-        <button class="toggleExtraBtn" onclick="toggleExtraProjects()">
+        <!-- <button class="toggleExtraBtn" onclick="toggleExtraProjects()">
           View More Projects
-        </button>
+        </button> -->
         <!-- Hidden Projects Section -->
         <div class="extraProjects hiddenProjects">
           <div class="projects-grid">
@@ -198,8 +232,16 @@
                 View Details
               </button>
               <div class="projectDetails">
+                <h3>About:</h3>
                 <p>Tech Stack Used</p>
+                <br>
                 <p>Another description here</p>
+                <br>
+                <h3>Features:</h3>
+                <ul>
+                  
+                </ul>
+                <a href="https://github.com/kphit03/LearnADC" target="_blank">See the code here</a>
               </div>
             </div>
             <div class="projectCard">
@@ -212,8 +254,16 @@
                 View Details
               </button>
               <div class="projectDetails">
+                <h3>About:</h3>
                 <p>Tech Stack Used</p>
+                <br>
                 <p>Another description here</p>
+                <br>
+                <h3>Features:</h3>
+                <ul>
+                  
+                </ul>
+                <a href="https://github.com/kphit03/LearnADC" target="_blank">See the code here</a>
               </div>
             </div>
             <div class="projectCard">
@@ -226,8 +276,16 @@
                 View Details
               </button>
               <div class="projectDetails">
+                <h3>About:</h3>
                 <p>Tech Stack Used</p>
+                <br>
                 <p>Another description here</p>
+                <br>
+                <h3>Features:</h3>
+                <ul>
+                  
+                </ul>
+                <a href="https://github.com/kphit03/LearnADC" target="_blank">See the code here</a>
               </div>
             </div>
           </div>
@@ -256,25 +314,40 @@
         <!-- place holder div for styling -->
 
         <div class="expCard">
+          <h2>State of Georgia Office of the Attorney General</h2>
+          <h3>Information Technology Specialist</h3>
+          <h3>July 2025 - Present</h3>
+          <ul>
+            <li>
+              Automated software deployment by writing scripts and packaging applications within Azure/Intune, 
+              reducing manual software installation efforts for end-users
+            </li>
+            <li>
+              Tested and trialed new incoming software, then created IT training presentations for end-users. 
+              Provided resources at end of training in-case users are in need of more assistance
+            </li>
+            <li>
+              Authored and maintained process documentation for enterprise tools (document management systems, 
+              Microsoft 365, evidence management systems), improving team efficiency and knowledge sharing
+            </li>
+          </ul>
+        </div>
+        <div class="expCard">
           <h2>Sedgwick County Government</h2>
-          <h3>IT Support Analyst</h3>
+          <h3>Information Technology Analyst</h3>
           <h3>October 2024 - April 2025</h3>
           <ul>
             <li>
-              Utilize ticketing systems to provide IT incident management and
-              technical project completion to over 3,037 end users across 40+
-              locations.
+              Designed and executed automation scripts in PowerShell for software installations, proxy configurations, and security tool deployment (e.g., CrowdStrike), 
+              reducing repetitive manual tasks for IT agents
             </li>
             <li>
-              Perform site Network testing utilizing CLI tools such as Command
-              Prompt and PowerShell, assisting IT agents in VLAN configuration.
+              Conducted site-wide network and security testing using CLI tools, 
+              assisting in VLAN configuration and troubleshooting connectivity issues across 40+ locations
             </li>
             <li>
-              Create and update IT Security, networking, and operational related
-              documentation for a team of 10 IT Helpdesk agents to utilize.
-              Provided documentation for CrowdStrike remediations, scripts for
-              installation automation, proxy server setup, and ticket
-              escalation.
+              Produced IT security and operations documentation, 
+              standardizing procedures for a team of 10+ helpdesk agents and supporting faster ticket escalation and resolution
             </li>
           </ul>
         </div>
@@ -302,7 +375,7 @@
         </div>
         <div class="expCard">
           <h2>Buchanan Technologies</h2>
-          <h3>IT Helpdesk</h3>
+          <h3>Information Technology Helpdesk</h3>
           <h3>January 2024 - June 2024</h3>
           <ul>
             <li>

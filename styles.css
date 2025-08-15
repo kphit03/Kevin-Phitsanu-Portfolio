@@ -359,10 +359,11 @@ body.lock-scroll {
   margin-top: 1rem;
   font-size: 1rem;
   color: #333;
+  line-height: 1.8rem;
 }
 
 .projectDetails.show {
-  max-height: 500px; /* or larger if your content needs it */
+  max-height: 700px; /* or larger if your content needs it */
   opacity: 1;
   padding-top: 1rem;
 }
