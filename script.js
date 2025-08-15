@@ -258,3 +258,40 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 });
+
+// Prevent #hash in the URL while still scrolling 
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  // remove hash without adding a history entry
+  history.replaceState(null, "", window.location.pathname + window.location.search);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Intercept navbar anchor clicks
+  document.querySelectorAll('.navRight a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const id = a.getAttribute("href").slice(1);
+      if (!id) return;
+      e.preventDefault();
+      scrollToSection(id);
+
+      // close mobile menu if open
+      const navRight = document.getElementById("nav-links");
+      navRight?.classList.remove("show");
+    });
+  });
+
+  // If someone lands on a URL with a hash, scroll once then clean it
+  if (location.hash) {
+    const id = location.hash.slice(1);
+    const el = document.getElementById(id);
+    if (el) {
+      // instant to avoid double-animate with GSAP
+      el.scrollIntoView({ behavior: "auto", block: "start" });
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+  }
+});
+
