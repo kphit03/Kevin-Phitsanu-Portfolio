@@ -530,6 +530,24 @@ body.lock-scroll {
   .expCard {
     width: 100%;
     margin: 1rem 0 !important;
+    padding: 1.5rem; /* shrink padding too so text doesn’t look cramped */
+  }
+
+  .expCard h2 {
+    font-size: 1.1rem; /* company name */
+  }
+
+  .expCard h3 {
+    font-size: 0.95rem; /* job title + dates */
+  }
+
+  .expCard li {
+    font-size: 1rem;   /* bullet points */
+    line-height: 1.4;
+  }
+
+  .expContainer > p {
+    font-size: 1rem;
   }
 }
 
