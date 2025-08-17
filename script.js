@@ -139,7 +139,7 @@ const backToTopBtn = document.getElementById("backToTopBtn");
 function toggleBackToTop() {
   if (window.scrollY > 100) {
     backToTopBtn.classList.add("show");
-    console.log("ScrollY:", window.scrollY);
+    // console.log("ScrollY:", window.scrollY);
   } else {
     backToTopBtn.classList.remove("show");
   }
@@ -148,7 +148,7 @@ function toggleBackToTop() {
 window.addEventListener("scroll", toggleBackToTop);
 
 backToTopBtn.addEventListener("click", () => {
-  console.log("clicked");
+  // console.log("clicked");
   window.scrollTo({
     top: 0,
     behavior: "smooth",
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (hamburger && navRight) {
     hamburger.addEventListener("click", function () {
       navRight.classList.toggle("show");
-      console.log(navRight.classList);
+      // console.log(navRight.classList);
     });
   }
   window.scrollTo(0, 0);
