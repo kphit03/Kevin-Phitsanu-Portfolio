@@ -76,7 +76,7 @@ document
   .getElementById("download-resume")
   .addEventListener("click", function () {
     const link = document.createElement("a"); //programmatically added link on download-resume, can do this in html but wanted to do it in js for fun
-    link.href = "/Kevin-Phitsanu-Portfolio/docs/Kevin Phitsanu Resume.pdf";
+    link.href = "./docs/Kevin Phitsanu Resume.pdf";
     link.download = "Kevin Phitsanu Resume.pdf"; //download goes to this file
     document.body.appendChild(link);
     link.click();
