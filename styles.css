@@ -38,7 +38,7 @@ section {
   flex-wrap: nowrap;
   position: relative;
   transition: transform 0.6s ease, opacity 0.6s ease;
-  margin-bottom: 3rem;
+  
 }
 
 .navLeft {

@@ -223,8 +223,12 @@ document.addEventListener("DOMContentLoaded", () => {
     paddingBottom: "6rem",
     minHeight: "auto",
     onComplete: () => {
-      // Animate navbar into view while it's still absolute
-      gsap.fromTo(
+
+      // Unlock scroll
+      document.body.classList.remove("lock-scroll");
+    },
+  });
+  gsap.fromTo(
         navbar,
         {
           y: -60,
@@ -240,6 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
           paddingBottom: "1.4rem",
           marginBottom: "1.5rem",
           duration: 1,
+          delay: 3.2,
           ease: "power2.out",
           onStart: () => {
             navbar.classList.remove("hidden");
@@ -252,11 +257,6 @@ document.addEventListener("DOMContentLoaded", () => {
           },
         }
       );
-
-      // Unlock scroll
-      document.body.classList.remove("lock-scroll");
-    },
-  });
 });
 
 // Prevent #hash in the URL while still scrolling 
