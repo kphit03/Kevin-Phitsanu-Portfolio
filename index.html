@@ -63,15 +63,16 @@
             <p>
               Hey! I'm Kevin. 
             </p>
-            <p>Based in Atlanta, I'm an aspiring full-stack developer. I am current
+            <p>Based in Atlanta, I'm a full-stack developer. I am current
               pursuing my M.S. in Computer Science at Georgia Tech.</p>
             <p>
-              I have hands-on, personal project experience with full-stack
-              development, and also professional IT background within
-              government, enterprise, and financial sectors.
+              I have hands-on experience with full-stack
+              development, mobile development, and IT (General, Cloud, Cybersecurity, Platform). 
+              In my current position, I regularly use JavaScript, Swift, SwiftUI, Java, Android Studio, AWS, Azure, and PostgreSQL.
+              I'm also comfortable with React, Angular, and Python as well.
             </p>
             <p>
-              Most importantly, I am a Master rank ADC player in League of
+              Most importantly though, I am a Master rank ADC player in League of
               Legends. (If you know, you know)
             </p>
           </div>
@@ -90,56 +91,89 @@
           <div class="img-item" style="--i: 1">
             <img
               src="./images/javascript logo.png"
-              alt=""
+              alt="JavaScript Logo"
             />
           </div>
           <div class="img-item" style="--i: 2">
             <img
               src="./images/typescript logo.png"
-              alt=""
+              alt="TypeScript Logo"
             />
           </div>
           <div class="img-item" style="--i: 3">
-            <img src="./images/java-logo3.png" alt="" />
+            <img src="./images/java-logo3.png" alt="Java Logo" />
           </div>
           <div class="img-item" style="--i: 4">
             <img
               src="./images/angular logo.png"
-              alt=""
+              alt="Angular Logo"
             />
           </div>
           <div class="img-item" style="--i: 5">
-            <img src="./images/react-icon.png" alt="" />
+            <img src="./images/react-icon.png" alt="React Logo" />
           </div>
           <div class="img-item" style="--i: 6">
             <img
               src="./images/spring boot logo.png"
-              alt=""
+              alt="Spring Boot Logo"
             />
           </div>
           <div class="img-item" style="--i: 7">
-            <img src="./images/aws.png" alt="" />
+            <img src="./images/aws.png" alt="AWS Logo" />
           </div>
           <div class="img-item" style="--i: 8">
-            <img src="./images/html logo.png" alt="" />
+            <img src="./images/html logo.png" alt="HTML Logo" />
           </div>
           <div class="img-item" style="--i: 9">
-            <img src="./images/css logo.png" alt="" />
+            <img src="./images/css logo.png" alt="CSS Logo" />
           </div>
         </div>
       </section>
 
       <section class="projectsContainer" id="projectsContainer">
-        <h1>Projects</h1>
+        <h1>Personal Projects</h1>
 
         <div class="projects-grid">
           <!-- Visible Projects -->
           <div class="projectCard">
+              <h3>The Resume Tailor</h3>
+              <a href="https://the-resume-tailor.netlify.app/" target="_blank">
+                <img
+                src="./images/the-resume-tailor.png"
+                alt="Resume Tailor Landing Page Picture"
+                href="https://the-resume-tailor.netlify.app/"
+              />
+              </a>
+
+              <button onclick="hideShow(this)" class="hideShowBtn">
+                View Details
+              </button>
+              <div class="projectDetails">
+                <h3>About:</h3>
+                <p>Tech Stack Used <strong>React, Spring Boot, JavaScript, Java, Spring AI, OpenAI API, OAuth2, PostgreSQL</strong></p>
+                <br>
+                <p>AI resume analyzer application. Tailor your resume towards job descriptions.</p>
+                <br>
+                <h3>Skills Implemented:</h3>
+                <ul>
+                  <li>Rest API for OAuth2 and data processing</li>
+                  <li>Data analysis</li>
+                  <li>OpenAI API for resume tailoring based on job descriptions</li>
+                  <li>Dashboard returning job-specific suggestions, instant insights, and ATS friendly keywords</li>
+                </ul>
+                <a href="https://the-resume-tailor.netlify.app/" target="_blank">Try the app for yourself!</a>
+          </div>
+
+          </div> 
+          <div class="projectCard">
             <h3>LearnADC</h3>
-            <img
+            <a href="https://github.com/kphit03/LearnADC" target="_blank" >
+              <img
               src="./images/learnadc.png"
               alt=""
-            />
+              />
+            </a>
+            
             <button onclick="hideShow(this)" class="hideShowBtn">
               View Details
             </button>
@@ -164,6 +198,41 @@
           </div>
 
           <div class="projectCard">
+            <h3>KP Employee Management System</h3>
+            <a href="https://github.com/kphit03/employee-management-system" target="_blank">
+              <img
+              src="./images/kp-ems.png"
+              alt=""
+              />
+            </a>
+            
+            <button onclick="hideShow(this)" class="hideShowBtn">
+              View Details
+            </button>
+            <div class="projectDetails">
+              <h3>About:</h3>
+              <p>Tech Stack Used: <strong>Angular, Spring Boot, TypeScript, Java, HTML, CSS, MySQL</strong></p>
+              <br>
+              <p>Create, update, delete, and find all your employees with the KP EMS application. Admins are able to add, remove, update, and get all employees.</p>
+              <br>
+              <h3>Skills Implemented:</h3>
+              <ul>
+                <li>Rest API (for crud functionality)</li>
+                <li>Spring Security (JWT Authorization), protect endpoints</li>
+                <li>Downloadable excel reports for all employees</li>
+              </ul>
+              <a href="https://github.com/kphit03/employee-management-system" target="_blank">See the code here</a>
+            </div>
+          </div>
+        </div>
+<!-- 
+        <button class="toggleExtraBtn" onclick="toggleExtraProjects()">
+          View More Projects
+        </button> -->
+        <!-- Hidden Projects Section -->
+        <div class="extraProjects hiddenProjects">
+          <div class="projects-grid">
+            <div class="projectCard">
             <h3>Find My Movie</h3>
             <img
               src="./images/find-movie.png"
@@ -188,61 +257,6 @@
               <a href="https://github.com/kphit03/find-movies" target="_blank">See the code here</a>
             </div>
           </div>
-
-          <div class="projectCard">
-            <h3>KP Employee Management System</h3>
-            <img
-              src="./images/kp-ems.png"
-              alt=""
-            />
-            <button onclick="hideShow(this)" class="hideShowBtn">
-              View Details
-            </button>
-            <div class="projectDetails">
-              <h3>About:</h3>
-              <p>Tech Stack Used: <strong>Angular, Spring Boot, TypeScript, Java, HTML, CSS, MySQL</strong></p>
-              <br>
-              <p>Create, update, delete, and find all your employees with the KP EMS application. Admins are able to add, remove, update, and get all employees.</p>
-              <br>
-              <h3>Skills Implemented:</h3>
-              <ul>
-                <li>Rest API (for crud functionality)</li>
-                <li>Spring Security (JWT Authorization), protect endpoints</li>
-                <li>Downloadable excel reports for all employees</li>
-              </ul>
-              <a href="https://github.com/kphit03/employee-management-system" target="_blank">See the code here</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- <button class="toggleExtraBtn" onclick="toggleExtraProjects()">
-          View More Projects
-        </button> -->
-        <!-- Hidden Projects Section -->
-        <div class="extraProjects hiddenProjects">
-          <div class="projects-grid">
-            <div class="projectCard">
-              <h3>Project 4</h3>
-              <img
-                src="./images/maxresdefault.jpg"
-                alt=""
-              />
-              <button onclick="hideShow(this)" class="hideShowBtn">
-                View Details
-              </button>
-              <div class="projectDetails">
-                <h3>About:</h3>
-                <p>Tech Stack Used</p>
-                <br>
-                <p>Another description here</p>
-                <br>
-                <h3>Features:</h3>
-                <ul>
-                  
-                </ul>
-                <a href="https://github.com/kphit03/LearnADC" target="_blank">See the code here</a>
-              </div>
-            </div>
             <div class="projectCard">
               <h3>Project 5</h3>
               <img
@@ -311,9 +325,41 @@
         >
         <div></div>
         <!-- place holder div for styling -->
-
         <div class="expCard">
-          <h2>State of Georgia Office of the Attorney General</h2>
+          <h2>Foreko</h2>
+          <h3>Head of Software Engineering <i class="exp-sub-heading">(Full-Time)</i></h3>
+          <h3>September 2025 - Present</h3>
+          <ul>
+            <li>
+              Lead a team of developers to create AI inventory management toolkits, following all stages of the software development lifecycle, 
+              leading development stages including planning, designing, developing, testing, and maintenance.
+            </li>
+            <li>
+              Designed, architected, and developed native mobile iOS and Android applications with Swift, SwiftUI, Java, Android Studio.
+            </li>
+            <li>
+              Collaborate with stakeholders to research product requirements, translating the requirements into production applications.
+            </li>
+          </ul>
+        </div>
+        <div class="expCard">
+          <h2>Holdorf Press LLC</h2>
+          <h3>Web Developer <i class="exp-sub-heading">(Internship)</i></h3>
+          <h3>October 2025 - Present</h3>
+          <ul>
+            <li>
+              Migrated and maintained the current web application to a new CMS (Wordpress), utilizing PHP, JavaScript, and SQL.
+            </li>
+            <li>
+              Gathered user requirements by collaborating with other developers and project managers, turning ideas into features.
+            </li>
+            <li>
+              Tasked with creating and integrating E-Commerce transactions via Stripe  and built an automated newsletter.
+            </li>
+          </ul>
+        </div>
+        <div class="expCard">
+          <h2>State of Georgia Office of the Attorney General <i class="exp-sub-heading">(Full-Time)</i></h2>
           <h3>Information Technology Specialist</h3>
           <h3>July 2025 - Present</h3>
           <ul>
@@ -322,74 +368,10 @@
               reducing manual software installation efforts for end-users
             </li>
             <li>
-              Tested and trialed new incoming software, then created IT training presentations for end-users. 
-              Provided resources at end of training in-case users are in need of more assistance
+              Developed and documented reusable HTML email templates, standardizing agency communications.
             </li>
             <li>
-              Authored and maintained process documentation for enterprise tools (document management systems, 
-              Microsoft 365, evidence management systems), improving team efficiency and knowledge sharing
-            </li>
-          </ul>
-        </div>
-        <div class="expCard">
-          <h2>Sedgwick County Government</h2>
-          <h3>Information Technology Analyst</h3>
-          <h3>October 2024 - April 2025</h3>
-          <ul>
-            <li>
-              Designed and executed automation scripts in PowerShell for software installations, proxy configurations, and security tool deployment (e.g., CrowdStrike), 
-              reducing repetitive manual tasks for IT agents
-            </li>
-            <li>
-              Conducted site-wide network and security testing using CLI tools, 
-              assisting in VLAN configuration and troubleshooting connectivity issues across 40+ locations
-            </li>
-            <li>
-              Produced IT security and operations documentation, 
-              standardizing procedures for a team of 10+ helpdesk agents and supporting faster ticket escalation and resolution
-            </li>
-          </ul>
-        </div>
-        <div class="expCard">
-          <h2>Koch Industries</h2>
-          <h3>Technical Consultant (Contract)</h3>
-          <h3>June 2024 - July 2024</h3>
-          <ul>
-            <li>
-              Utilize Azure, Active Directory, ServiceNow, and CLI tools to
-              perform level 2 IT incident and request management for an
-              enterprise environment at Georgia-Pacific to over 35,000 end users
-              while maintaining an 85% SLA for 10+ tickets closed per day.
-            </li>
-            <li>
-              Provided critical incident management and cloud server support by
-              collaborating with other Koch subsidiaries to over 70,000
-              workstations affected by the CrowdStrike outage.
-            </li>
-            <li>
-              Conduct general IT provisioning and licensing for domains and apps
-              such as Active Directory, Zscaler, MS 365, and more.
-            </li>
-          </ul>
-        </div>
-        <div class="expCard">
-          <h2>Buchanan Technologies</h2>
-          <h3>Information Technology Helpdesk</h3>
-          <h3>January 2024 - June 2024</h3>
-          <ul>
-            <li>
-              Provide level 1 technical support to hardware and software related
-              issues, averaging 10+ tickets a day.
-            </li>
-            <li>
-              Exceeded SLA standards where Helpdesk agents are evaluated.
-              Recorded an average weekly assessment of 97% based on technical
-              and soft skills.
-            </li>
-            <li>
-              Collaborate with other departments such as IT Security, Cloud
-              Support, and Server Support to effectively handle critical
-              incidents.
+              Collected requirements and authored change requests for SQL database updates (new fields, constraints), improving data quality and user workflows.
             </li>
           </ul>
         </div>

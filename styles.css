@@ -156,7 +156,7 @@ section {
   flex-direction: row;
   justify-content: center;
   gap: 4rem;
-  background: #f9fbff;
+  background: #f3f7ff;
   font-family: "Montserrat";
   flex-wrap: wrap;
   /* for hover animation */
@@ -324,7 +324,7 @@ body.lock-scroll {
   font-size: 2rem;
 }
 .projectCard {
-  background-color: #f5f7ff;
+  background-color: #bec4ff63;
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
@@ -509,7 +509,7 @@ body.lock-scroll {
 .expCard {
   display: flex;
   flex-direction: column;
-  background-color: #f5f7ff; /* semi-transparent white */
+  background-color: #bec4ff63; /* semi-transparent white */
   padding: 3rem 4rem 3rem 4rem;
   border-radius: 1rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
@@ -709,6 +709,19 @@ form#contact-form button:hover {
 
   .aboutRight img {
     max-width: 80%;
+  }
+
+}
+/* Tablet range: hide the harsh borders & relax spacing */
+@media (max-width: 1350px) and (min-width: 769px) {
+  .aboutLeft,
+  .aboutRight {
+    border: none;
+    padding: 0;                 /* remove the side padding that paired with borders */
+  }
+
+  .aboutContainer {
+    gap: clamp(1rem, 4vw, 3rem); /* add breathing room between columns */
   }
 }
 
