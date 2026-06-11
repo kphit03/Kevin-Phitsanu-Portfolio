@@ -41,7 +41,6 @@ emailjs.init({
   },
 });
 
-
 window.onload = function () {
   const form = document.getElementById("contact-form");
   const submitBtn = form.querySelector('button[type="submit"]');
@@ -75,9 +74,9 @@ window.onload = function () {
 document
   .getElementById("download-resume")
   .addEventListener("click", function () {
-    const link = document.createElement("a"); //programmatically added link on download-resume, can do this in html but wanted to do it in js for fun
-    link.href = "./docs/Kevin_Phitsanu_Resume_2026.pdf";
-    link.download = "Kevin_Phitsanu_Resume.pdf"; //download goes to this file
+    const link = document.createElement("a");
+    link.href = "./docs/Kevin Phitsanu Resume.pdf";
+    link.download = "Kevin Phitsanu Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -88,18 +87,16 @@ document
 //intersection observer scroll animation
 
 //projects section
-const projectCards = document.querySelectorAll(".projectCard"); //grab project cards
+const projectCards = document.querySelectorAll(".projectCard");
 
 const observer = new IntersectionObserver(
   (entries) => {
-    //intersection observer used here
     entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
         const card = entry.target;
-        // Staggered animation: each card gets a slight delay
         card.style.animationDelay = `${index * 0.2}s`;
         card.classList.add("animate-in");
-        observer.unobserve(card); // Animate once per card
+        observer.unobserve(card);
       }
     });
   },
@@ -133,13 +130,11 @@ const expObserver = new IntersectionObserver(
 experienceCards.forEach((card) => expObserver.observe(card));
 
 //back to top button
-
 const backToTopBtn = document.getElementById("backToTopBtn");
-// back to top scroll visibility handler
+
 function toggleBackToTop() {
   if (window.scrollY > 100) {
     backToTopBtn.classList.add("show");
-    // console.log("ScrollY:", window.scrollY);
   } else {
     backToTopBtn.classList.remove("show");
   }
@@ -148,7 +143,6 @@ function toggleBackToTop() {
 window.addEventListener("scroll", toggleBackToTop);
 
 backToTopBtn.addEventListener("click", () => {
-  // console.log("clicked");
   window.scrollTo({
     top: 0,
     behavior: "smooth",
@@ -165,7 +159,7 @@ function showToast(message, type = "success") {
 
   setTimeout(() => {
     toast.remove();
-  }, 3000); // Toast lasts for 3s
+  }, 3000);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -177,13 +171,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (hamburger && navRight) {
     hamburger.addEventListener("click", function () {
       navRight.classList.toggle("show");
-      // console.log(navRight.classList);
     });
   }
+
   window.scrollTo(0, 0);
   document.body.classList.add("lock-scroll");
 
-  navbar.classList.add("hidden"); // hide nav off-screen
+  navbar.classList.add("hidden");
 
   // Initial state
   gsap.set(topContainer, {
@@ -213,57 +207,58 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  // Shrink to normal
+  // Shrink to normal compact rectangle
   gsap.to(topContainer, {
     delay: 1.5,
     duration: 1.2,
     scale: 1,
     ease: "power2.inOut",
-    paddingTop: "6rem",
-    paddingBottom: "6rem",
+    paddingTop: "2rem",
+    paddingBottom: "2rem",
     minHeight: "auto",
     onComplete: () => {
-
-      // Unlock scroll
       document.body.classList.remove("lock-scroll");
     },
   });
+
   gsap.fromTo(
-        navbar,
-        {
-          y: -60,
-          opacity: 0,
-          paddingTop: 0,
-          paddingBottom: 0,
-          marginBottom: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          paddingTop: "1.4rem",
-          paddingBottom: "1.4rem",
-          marginBottom: "1.5rem",
-          duration: 1,
-          delay: 3.2,
-          ease: "power2.out",
-          onStart: () => {
-            navbar.classList.remove("hidden");
-          },
-          onComplete: () => {
-            navbar.style.position = "relative";
-            navbar.style.top = "";
-            navbar.style.left = "";
-            navbar.style.right = "";
-          },
-        }
-      );
+    navbar,
+    {
+      y: -60,
+      opacity: 0,
+      paddingTop: 0,
+      paddingBottom: 0,
+      marginBottom: 0,
+    },
+    {
+      y: 0,
+      opacity: 1,
+      paddingTop: "1.4rem",
+      paddingBottom: "1.4rem",
+      marginBottom: "1.5rem",
+      duration: 1,
+      delay: 3.2,
+      ease: "power2.out",
+      onStart: () => {
+        navbar.classList.remove("hidden");
+      },
+      onComplete: () => {
+        navbar.style.position = "relative";
+        navbar.style.top = "";
+        navbar.style.left = "";
+        navbar.style.right = "";
+      },
+    }
+  );
 });
 
-// Prevent #hash in the URL while still scrolling 
+// Prevent #hash in the URL while still scrolling
 function scrollToSection(id) {
   const el = document.getElementById(id);
   if (!el) return;
+
   el.scrollIntoView({ behavior: "smooth", block: "start" });
+
   // remove hash without adding a history entry
   history.replaceState(null, "", window.location.pathname + window.location.search);
 }
@@ -274,6 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
     a.addEventListener("click", (e) => {
       const id = a.getAttribute("href").slice(1);
       if (!id) return;
+
       e.preventDefault();
       scrollToSection(id);
 
@@ -287,11 +283,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (location.hash) {
     const id = location.hash.slice(1);
     const el = document.getElementById(id);
+
     if (el) {
-      // instant to avoid double-animate with GSAP
       el.scrollIntoView({ behavior: "auto", block: "start" });
       history.replaceState(null, "", window.location.pathname + window.location.search);
     }
   }
 });
-
