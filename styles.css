@@ -8,20 +8,26 @@
 :root {
   --duration: 35s;
   --totalitems: 9;
+
+  --card-bg: #eef0ff;
+  --card-border: #c8ceff;
+  --card-shadow: 0 6px 18px rgba(45, 66, 255, 0.12);
 }
+
 html,
 body {
   height: auto;
   scroll-behavior: smooth;
   background-color: #ffffff;
   font-family: "Inter", "Montserrat", Arial, Helvetica, sans-serif;
-  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+  font-feature-settings: "liga" 1, "calt" 1;
   overflow-x: hidden;
 }
 
 section {
-  scroll-margin-top: 80px; /* Adjust based on your navbar height */
+  scroll-margin-top: 80px;
 }
+
 /* Navbar styling */
 .navbar {
   display: flex;
@@ -30,15 +36,10 @@ section {
   background-color: #5465ff;
   padding-top: 1.4rem;
   padding-bottom: 1.4rem;
-  height: auto; /* important: allow height to grow naturally */
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  height: auto;
   flex-wrap: nowrap;
   position: relative;
   transition: transform 0.6s ease, opacity 0.6s ease;
-  
 }
 
 .navLeft {
@@ -48,6 +49,7 @@ section {
   white-space: nowrap;
   flex-shrink: 0;
 }
+
 .navRight {
   display: flex;
   flex-direction: row;
@@ -58,10 +60,12 @@ section {
   font-size: 1.2rem;
   font-weight: 500;
 }
+
 .navbar a {
   color: #fff;
   text-decoration: none;
 }
+
 .navbar.hidden {
   position: absolute;
   top: 0;
@@ -93,8 +97,6 @@ section {
 }
 
 @media (max-width: 768px) {
-  /* Navbar Container */
-  /* Ensure navbar layout is responsive */
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -104,13 +106,12 @@ section {
     z-index: 1000;
   }
 
-  /* Show hamburger menu only on mobile */
   .hamburger {
     display: flex;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
-    z-index: 1001; /* Make sure it's clickable */
+    z-index: 1001;
     position: relative;
   }
 
@@ -122,7 +123,6 @@ section {
     transition: all 0.3s ease;
   }
 
-  /* navRight hidden by default */
   .navRight {
     position: absolute;
     top: 100%;
@@ -147,8 +147,7 @@ section {
   }
 }
 
-/* top container styling (profile pic and intro text) */
-
+/* top container styling */
 .topContainer {
   padding: 2rem;
   border-radius: 1.5rem;
@@ -159,7 +158,6 @@ section {
   background: #f3f7ff;
   font-family: "Montserrat";
   flex-wrap: wrap;
-  /* for hover animation */
   border: 2px solid transparent;
 }
 
@@ -203,13 +201,11 @@ body.lock-scroll {
   color: #000000;
 }
 
-/* Main Content Styling */
-
-/*ABOUT ME */
-
+/* ABOUT ME */
 .aboutContainer img {
   max-width: 400px;
 }
+
 .aboutContainer {
   max-width: 90%;
   margin-left: 5%;
@@ -258,6 +254,7 @@ body.lock-scroll {
   padding-left: 1rem;
 }
 
+/* Skills */
 .skillsContainer {
   margin: 10rem auto 0 auto;
   display: flex;
@@ -303,6 +300,7 @@ body.lock-scroll {
     left: -8vw;
   }
 }
+
 .img-item img {
   height: 100%;
   width: 100%;
@@ -317,19 +315,22 @@ body.lock-scroll {
   padding: 2rem;
   font-family: "Montserrat";
 }
+
 .projectsContainer h1 {
   text-align: center;
   color: #5465ff;
   margin-bottom: 0.5rem;
   font-size: 2rem;
 }
+
 .projectCard {
-  background-color: #bec4ff63;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 1rem;
   padding: 1.5rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
   margin-bottom: 2rem;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .projectCard:hover {
@@ -363,10 +364,11 @@ body.lock-scroll {
 }
 
 .projectDetails.show {
-  max-height: 700px; /* or larger if your content needs it */
+  max-height: 700px;
   opacity: 1;
   padding-top: 1rem;
 }
+
 .hideShowBtn {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
@@ -392,7 +394,7 @@ body.lock-scroll {
   align-items: start;
 }
 
-/* Projects Section Cont. (Hidden Cards) */
+/* Hidden Projects */
 .hiddenProjects {
   max-height: 0;
   overflow: hidden;
@@ -438,6 +440,7 @@ body.lock-scroll {
   margin-bottom: 0.5rem;
   font-size: 2rem;
 }
+
 .expCard h2 {
   color: #5465ff;
   font-size: 1.4rem;
@@ -491,6 +494,7 @@ body.lock-scroll {
   align-items: center;
   justify-content: center;
 }
+
 .downloadBtn:hover {
   background-color: #364aff;
   transform: translateY(-2px);
@@ -505,14 +509,16 @@ body.lock-scroll {
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 }
+
 /* Base styling for each experience card */
 .expCard {
   display: flex;
   flex-direction: column;
-  background-color: #bec4ff63; /* semi-transparent white */
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
   padding: 3rem 4rem 3rem 4rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
   margin: 4rem 0;
   width: 60%;
 }
@@ -530,19 +536,19 @@ body.lock-scroll {
   .expCard {
     width: 100%;
     margin: 1rem 0 !important;
-    padding: 1.5rem; /* shrink padding too so text doesn’t look cramped */
+    padding: 1.5rem;
   }
 
   .expCard h2 {
-    font-size: 1.1rem; /* company name */
+    font-size: 1.1rem;
   }
 
   .expCard h3 {
-    font-size: 0.95rem; /* job title + dates */
+    font-size: 0.95rem;
   }
 
   .expCard li {
-    font-size: 1rem;   /* bullet points */
+    font-size: 1rem;
     line-height: 1.4;
   }
 
@@ -550,8 +556,6 @@ body.lock-scroll {
     font-size: 1rem;
   }
 }
-
-/* Animate them on scroll later */
 
 /* Contact Section */
 .contactContainer {
@@ -570,6 +574,7 @@ body.lock-scroll {
   margin-bottom: 1.5rem;
   color: #2d42ff;
 }
+
 .contactSubheading {
   font-size: 1.2rem;
   font-weight: 500;
@@ -653,25 +658,19 @@ form#contact-form button:hover {
   border-radius: 2rem;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-
-  /* Icon + text alignment */
   display: flex;
   align-items: center;
   gap: 0.5rem;
-
-  /* Fade-in/out visibility control */
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.2s ease;
 }
 
-/* Show class added by JS */
 #backToTopBtn.show {
   opacity: 1;
   visibility: visible;
 }
 
-/* Optional hover effect */
 #backToTopBtn:hover {
   background-color: #364aff;
   transform: translateY(-2px);
@@ -682,9 +681,7 @@ form#contact-form button:hover {
   height: 20px;
 }
 
-/* responsiveness jazz */
-
-/* about section responsive */
+/* Responsiveness */
 @media (max-width: 768px) {
   .aboutContainer {
     flex-direction: column;
@@ -710,24 +707,24 @@ form#contact-form button:hover {
   .aboutRight img {
     max-width: 80%;
   }
-
 }
-/* Tablet range: hide the harsh borders & relax spacing */
+
+/* Tablet range */
 @media (max-width: 1350px) and (min-width: 769px) {
   .aboutLeft,
   .aboutRight {
     border: none;
-    padding: 0;                 /* remove the side padding that paired with borders */
+    padding: 0;
   }
 
   .aboutContainer {
-    gap: clamp(1rem, 4vw, 3rem); /* add breathing room between columns */
+    gap: clamp(1rem, 4vw, 3rem);
   }
 }
 
 @media (max-width: 768px) {
   .imgWrapper {
-    height: 60px; /* smaller height for mobile */
+    height: 60px;
     width: 90vw;
   }
 
@@ -739,6 +736,7 @@ form#contact-form button:hover {
     font-size: 1rem;
   }
 }
+
 @media (max-width: 768px) {
   .projectsContainer {
     max-width: 100%;
@@ -757,6 +755,7 @@ form#contact-form button:hover {
     max-width: 90%;
   }
 }
+
 @media (max-width: 768px) {
   .topContainer img {
     max-width: 200px;
@@ -789,43 +788,44 @@ form#contact-form button:hover {
   }
 }
 
-/* for intersection observer */
+/* Project card scroll animation */
 @keyframes bounceInLeft {
   0% {
     opacity: 0;
     transform: translateX(-100px);
   }
+
   60% {
     opacity: 1;
     transform: translateX(20px);
   }
+
   80% {
     transform: translateX(-5px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-/* Prepare cards to animate in */
 .projectCard {
   opacity: 0;
   transform: translateX(-50px);
 }
 
-/* This gets added when card is in view */
 .projectCard.animate-in {
   animation: bounceInLeft 0.8s ease forwards;
 }
 
-/* slide animation for exp section */
-/* Slide and fade in animation for experience cards */
+/* Experience card scroll animation */
 @keyframes fadeSlideIn {
   from {
     opacity: 0;
     transform: translateY(40px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -842,20 +842,20 @@ form#contact-form button:hover {
   animation: fadeSlideIn 0.6s ease forwards;
 }
 
-/*Custom Scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #e3e6eb; /* Light background */
+  background: #e3e6eb;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #5465ff; /* Your theme color */
+  background-color: #5465ff;
   border-radius: 10px;
-  border: 3px solid #e3e6eb; /* Creates padding around the thumb */
+  border: 3px solid #e3e6eb;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -899,14 +899,17 @@ form#contact-form button:hover {
     opacity: 0;
     transform: translateY(-20px);
   }
+
   10% {
     opacity: 1;
     transform: translateY(0);
   }
+
   90% {
     opacity: 1;
     transform: translateY(0);
   }
+
   100% {
     opacity: 0;
     transform: translateY(-20px);
@@ -939,9 +942,9 @@ form#contact-form button:hover {
 }
 
 .navbar a:hover {
-  color: #ffc400; /* Slight color accent on hover */
+  color: #ffc400;
 }
 
 .navbar a:hover::after {
-  transform: scaleX(1); /* Slide in underline */
+  transform: scaleX(1);
 }
