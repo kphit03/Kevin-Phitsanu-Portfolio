@@ -43,15 +43,19 @@ emailjs.init({
 
 window.onload = function () {
   const form = document.getElementById("contact-form");
+
+  if (!form) {
+    return;
+  }
+
   const submitBtn = form.querySelector('button[type="submit"]');
 
   form.addEventListener("submit", function (event) {
-    event.preventDefault(); //prevent form reloads
+    event.preventDefault();
 
     submitBtn.disabled = true;
     submitBtn.innerText = "Sending...";
 
-    //send form function
     emailjs
       .sendForm("service_21pg896", "template_54khror", this)
       .then(
@@ -59,9 +63,9 @@ window.onload = function () {
           this.reset();
           showToast("Message sent! I will respond within 48 hours.", "success");
         },
-        (error) => {
+        () => {
           showToast("Failed to send message. Please try again.", "error");
-        }
+        },
       )
       .finally(() => {
         submitBtn.disabled = false;
@@ -102,7 +106,7 @@ const observer = new IntersectionObserver(
   },
   {
     threshold: 0.1,
-  }
+  },
 );
 
 projectCards.forEach((card) => {
@@ -124,7 +128,7 @@ const expObserver = new IntersectionObserver(
   },
   {
     threshold: 0.2,
-  }
+  },
 );
 
 experienceCards.forEach((card) => expObserver.observe(card));
@@ -248,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navbar.style.left = "";
         navbar.style.right = "";
       },
-    }
+    },
   );
 });
 
@@ -260,7 +264,11 @@ function scrollToSection(id) {
   el.scrollIntoView({ behavior: "smooth", block: "start" });
 
   // remove hash without adding a history entry
-  history.replaceState(null, "", window.location.pathname + window.location.search);
+  history.replaceState(
+    null,
+    "",
+    window.location.pathname + window.location.search,
+  );
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -286,7 +294,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (el) {
       el.scrollIntoView({ behavior: "auto", block: "start" });
-      history.replaceState(null, "", window.location.pathname + window.location.search);
+      history.replaceState(
+        null,
+        "",
+        window.location.pathname + window.location.search,
+      );
     }
   }
 });

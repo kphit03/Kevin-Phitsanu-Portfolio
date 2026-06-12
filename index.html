@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -19,6 +19,10 @@
     ></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
   </head>
   <body>
     <div class="navbar">
@@ -43,10 +47,7 @@
 
     <div class="topContainer">
       <div class="topContainerLeft">
-        <img
-          src="./images/pfpl.png"
-          alt="profile pic"
-        />
+        <img src="./images/pfpl.png" alt="profile pic" />
       </div>
       <div class="topContainerRight">
         <h1>Hello,</h1>
@@ -60,30 +61,31 @@
         <div class="aboutLeft">
           <h1>About Me</h1>
           <div class="aboutParagraphs">
+            <p>Hey! I'm Kevin.</p>
+
             <p>
-              Hey! I'm Kevin.
+              Based in the Atlanta area, I'm a full-stack developer and
+              Programmer Analyst currently pursuing my M.S. in Computer Science
+              at Georgia Tech.
             </p>
-          
+
             <p>
-              Based in the Atlanta area, I'm a full-stack developer and Programmer Analyst currently
-              pursuing my M.S. in Computer Science at Georgia Tech.
+              I have hands-on experience building full-stack applications,
+              maintaining enterprise systems, developing web-based reports, and
+              working with Oracle SQL, PHP, Java, Python, JavaScript, Linux,
+              React, Angular, Spring Boot, and PostgreSQL.
             </p>
-          
+
             <p>
-              I have hands-on experience building full-stack applications, maintaining enterprise systems,
-              developing web-based reports, and working with Oracle SQL, PHP, Java, Python, JavaScript,
-              Linux, React, Angular, Spring Boot, and PostgreSQL.
-            </p>
-          
-            <p>
-              In my current role, I support programming requests across reporting and enterprise application
-              workflows, including writing Oracle SQL logic, troubleshooting integrations, debugging PHP and
+              In my current role, I support programming requests across
+              reporting and enterprise application workflows, including writing
+              Oracle SQL logic, troubleshooting integrations, debugging PHP and
               Java systems, and assisting with Linux server maintenance.
             </p>
-          
+
             <p>
-              Most importantly though, I am a Master rank ADC player in League of
-              Legends. (If you know, you know)
+              Most importantly though, I am a Master rank ADC player in League
+              of Legends. (If you know, you know)
             </p>
           </div>
         </div>
@@ -99,34 +101,22 @@
         <h1>Skills</h1>
         <div class="imgWrapper">
           <div class="img-item" style="--i: 1">
-            <img
-              src="./images/javascript logo.png"
-              alt="JavaScript Logo"
-            />
+            <img src="./images/javascript logo.png" alt="JavaScript Logo" />
           </div>
           <div class="img-item" style="--i: 2">
-            <img
-              src="./images/typescript logo.png"
-              alt="TypeScript Logo"
-            />
+            <img src="./images/typescript logo.png" alt="TypeScript Logo" />
           </div>
           <div class="img-item" style="--i: 3">
             <img src="./images/java-logo3.png" alt="Java Logo" />
           </div>
           <div class="img-item" style="--i: 4">
-            <img
-              src="./images/angular logo.png"
-              alt="Angular Logo"
-            />
+            <img src="./images/angular logo.png" alt="Angular Logo" />
           </div>
           <div class="img-item" style="--i: 5">
             <img src="./images/react-icon.png" alt="React Logo" />
           </div>
           <div class="img-item" style="--i: 6">
-            <img
-              src="./images/spring boot logo.png"
-              alt="Spring Boot Logo"
-            />
+            <img src="./images/spring boot logo.png" alt="Spring Boot Logo" />
           </div>
           <div class="img-item" style="--i: 7">
             <img src="./images/aws.png" alt="AWS Logo" />
@@ -146,96 +136,141 @@
         <div class="projects-grid">
           <!-- Visible Projects -->
           <div class="projectCard">
-              <h3>The Resume Tailor</h3>
-              <a href="https://github.com/kphit03/tweak-my-resume" target="_blank">
-                <img
+            <h3>The Resume Tailor</h3>
+            <a
+              href="https://github.com/kphit03/tweak-my-resume"
+              target="_blank"
+            >
+              <img
                 src="./images/the-resume-tailor.png"
                 alt="Resume Tailor Landing Page Picture"
                 href="https://github.com/kphit03/tweak-my-resume"
               />
-              </a>
-
-              <button onclick="hideShow(this)" class="hideShowBtn">
-                View Details
-              </button>
-              <div class="projectDetails">
-                <h3>About:</h3>
-                <p>Tech Stack Used <strong>React, Spring Boot, JavaScript, Java, Spring AI, OpenAI API, OAuth2, PostgreSQL</strong></p>
-                <br>
-                <p>AI resume analyzer application. Tailor your resume towards job descriptions.</p>
-                <br>
-                <h3>Skills Implemented:</h3>
-                <ul>
-                  <li>Rest API for OAuth2 and data processing</li>
-                  <li>Data analysis</li>
-                  <li>OpenAI API for resume tailoring based on job descriptions</li>
-                  <li>Dashboard returning job-specific suggestions, instant insights, and ATS friendly keywords</li>
-                </ul>
-                <a href="https://the-resume-tailor.netlify.app/" target="_blank">See the code here</a>
-          </div>
-
-          </div> 
-          <div class="projectCard">
-            <h3>LearnADC</h3>
-            <a href="https://github.com/kphit03/LearnADC" target="_blank" >
-              <img
-              src="./images/learnadc.png"
-              alt=""
-              />
             </a>
-            
+
             <button onclick="hideShow(this)" class="hideShowBtn">
               View Details
             </button>
             <div class="projectDetails">
               <h3>About:</h3>
-              <p>Tech Stack Used: <strong>Angular, Spring Boot, TypeScript, Java, MySQL, AWS, Vercel, HTML, CSS</strong></p>
-              <br>
-              <p>LearnADC is a free to use learning platform for League of Legends ADC players to take their skillset to the next level.
-                This project was built with Angular, Spring Boot, and MySQL, then deployed on AWS and Vercel. I am planning to add more courses for the users when time allows.</p>
-              <br>
+              <p>
+                Tech Stack Used
+                <strong
+                  >React, Spring Boot, JavaScript, Java, Spring AI, OpenAI API,
+                  OAuth2, PostgreSQL</strong
+                >
+              </p>
+              <br />
+              <p>
+                AI resume analyzer application. Tailor your resume towards job
+                descriptions.
+              </p>
+              <br />
+              <h3>Skills Implemented:</h3>
+              <ul>
+                <li>Rest API for OAuth2 and data processing</li>
+                <li>Data analysis</li>
+                <li>
+                  OpenAI API for resume tailoring based on job descriptions
+                </li>
+                <li>
+                  Dashboard returning job-specific suggestions, instant
+                  insights, and ATS friendly keywords
+                </li>
+              </ul>
+              <a href="https://the-resume-tailor.netlify.app/" target="_blank"
+                >See the code here</a
+              >
+            </div>
+          </div>
+          <div class="projectCard">
+            <h3>LearnADC</h3>
+            <a href="https://github.com/kphit03/LearnADC" target="_blank">
+              <img src="./images/learnadc.png" alt="" />
+            </a>
+
+            <button onclick="hideShow(this)" class="hideShowBtn">
+              View Details
+            </button>
+            <div class="projectDetails">
+              <h3>About:</h3>
+              <p>
+                Tech Stack Used:
+                <strong
+                  >Angular, Spring Boot, TypeScript, Java, MySQL, AWS, Vercel,
+                  HTML, CSS</strong
+                >
+              </p>
+              <br />
+              <p>
+                LearnADC is a free to use learning platform for League of
+                Legends ADC players to take their skillset to the next level.
+                This project was built with Angular, Spring Boot, and MySQL,
+                then deployed on AWS and Vercel. I am planning to add more
+                courses for the users when time allows.
+              </p>
+              <br />
               <h3>Skills Implemented:</h3>
               <ul>
                 <li>Responsive Web Design</li>
-                <li>RestAPI built with Spring Boot, and integrated into the application with Angular</li>
+                <li>
+                  RestAPI built with Spring Boot, and integrated into the
+                  application with Angular
+                </li>
                 <li>Admin portal (add, remove, edit courses/lessons)</li>
                 <li>Spring Security implementation (JWT Auth)</li>
                 <li>Angular Routing, HTTP Client</li>
                 <li>Database integration (users, roles, courses, lessons)</li>
               </ul>
-              <a href="https://github.com/kphit03/LearnADC" target="_blank">See the code here</a>
+              <a href="https://github.com/kphit03/LearnADC" target="_blank"
+                >See the code here</a
+              >
             </div>
           </div>
 
           <div class="projectCard">
-            <h3>KP Employee Management System</h3>
-            <a href="https://github.com/kphit03/employee-management-system" target="_blank">
-              <img
-              src="./images/kp-ems.png"
-              alt=""
-              />
+            <h3>KP EMS</h3>
+            <a
+              href="https://github.com/kphit03/employee-management-system"
+              target="_blank"
+            >
+              <img src="./images/kp-ems.png" alt="" />
             </a>
-            
+
             <button onclick="hideShow(this)" class="hideShowBtn">
               View Details
             </button>
             <div class="projectDetails">
               <h3>About:</h3>
-              <p>Tech Stack Used: <strong>Angular, Spring Boot, TypeScript, Java, HTML, CSS, MySQL</strong></p>
-              <br>
-              <p>Create, update, delete, and find all your employees with the KP EMS application. Admins are able to add, remove, update, and get all employees.</p>
-              <br>
+              <p>
+                Tech Stack Used:
+                <strong
+                  >Angular, Spring Boot, TypeScript, Java, HTML, CSS,
+                  MySQL</strong
+                >
+              </p>
+              <br />
+              <p>
+                Create, update, delete, and find all your employees with the KP
+                EMS application. Admins are able to add, remove, update, and get
+                all employees.
+              </p>
+              <br />
               <h3>Skills Implemented:</h3>
               <ul>
                 <li>Rest API (for crud functionality)</li>
                 <li>Spring Security (JWT Authorization), protect endpoints</li>
                 <li>Downloadable excel reports for all employees</li>
               </ul>
-              <a href="https://github.com/kphit03/employee-management-system" target="_blank">See the code here</a>
+              <a
+                href="https://github.com/kphit03/employee-management-system"
+                target="_blank"
+                >See the code here</a
+              >
             </div>
           </div>
         </div>
-<!-- 
+        <!-- 
         <button class="toggleExtraBtn" onclick="toggleExtraProjects()">
           View More Projects
         </button> -->
@@ -243,72 +278,74 @@
         <div class="extraProjects hiddenProjects">
           <div class="projects-grid">
             <div class="projectCard">
-            <h3>Find My Movie</h3>
-            <img
-              src="./images/find-movie.png"
-              alt=""
-            />
-            <button onclick="hideShow(this)" class="hideShowBtn">
-              View Details
-            </button>
-            <div class="projectDetails">
-              <h3>About:</h3>
-              <p>Tech Stack Used: <strong>React, JavaScript, JSX, TailwindCSS</strong></p>
-              <br>
-              <p>Find a movie and it's details with a simple search. Built with React, JavaScript, JSX, and TailwindCSS</p>
-              <br>
-              <h3>Skills Implemented:</h3>
-              <ul>
-                <li>Responsive Web Design</li>
-                <li>Search movies</li>
-                <li>State management (track search terms, error messages, loading state, and movie list)</li>
-                <li>Optimized search api calls with the hook useDebounce</li>
-              </ul>
-              <a href="https://github.com/kphit03/find-movies" target="_blank">See the code here</a>
+              <h3>Find My Movie</h3>
+              <img src="./images/find-movie.png" alt="" />
+              <button onclick="hideShow(this)" class="hideShowBtn">
+                View Details
+              </button>
+              <div class="projectDetails">
+                <h3>About:</h3>
+                <p>
+                  Tech Stack Used:
+                  <strong>React, JavaScript, JSX, TailwindCSS</strong>
+                </p>
+                <br />
+                <p>
+                  Find a movie and it's details with a simple search. Built with
+                  React, JavaScript, JSX, and TailwindCSS
+                </p>
+                <br />
+                <h3>Skills Implemented:</h3>
+                <ul>
+                  <li>Responsive Web Design</li>
+                  <li>Search movies</li>
+                  <li>
+                    State management (track search terms, error messages,
+                    loading state, and movie list)
+                  </li>
+                  <li>Optimized search api calls with the hook useDebounce</li>
+                </ul>
+                <a href="https://github.com/kphit03/find-movies" target="_blank"
+                  >See the code here</a
+                >
+              </div>
             </div>
-          </div>
             <div class="projectCard">
               <h3>Project 5</h3>
-              <img
-                src="./images/maxresdefault.jpg"
-                alt=""
-              />
+              <img src="./images/maxresdefault.jpg" alt="" />
               <button onclick="hideShow(this)" class="hideShowBtn">
                 View Details
               </button>
               <div class="projectDetails">
                 <h3>About:</h3>
                 <p>Tech Stack Used</p>
-                <br>
+                <br />
                 <p>Another description here</p>
-                <br>
+                <br />
                 <h3>Features:</h3>
-                <ul>
-                  
-                </ul>
-                <a href="https://github.com/kphit03/LearnADC" target="_blank">See the code here</a>
+                <ul></ul>
+                <a href="https://github.com/kphit03/LearnADC" target="_blank"
+                  >See the code here</a
+                >
               </div>
             </div>
             <div class="projectCard">
               <h3>Project 6</h3>
-              <img
-                src="./images/maxresdefault.jpg"
-                alt=""
-              />
+              <img src="./images/maxresdefault.jpg" alt="" />
               <button onclick="hideShow(this)" class="hideShowBtn">
                 View Details
               </button>
               <div class="projectDetails">
                 <h3>About:</h3>
                 <p>Tech Stack Used</p>
-                <br>
+                <br />
                 <p>Another description here</p>
-                <br>
+                <br />
                 <h3>Features:</h3>
-                <ul>
-                  
-                </ul>
-                <a href="https://github.com/kphit03/LearnADC" target="_blank">See the code here</a>
+                <ul></ul>
+                <a href="https://github.com/kphit03/LearnADC" target="_blank"
+                  >See the code here</a
+                >
               </div>
             </div>
           </div>
@@ -338,121 +375,155 @@
 
         <div class="expCard">
           <h2>Georgia Highlands College</h2>
-          <h3>Programmer Analyst III <i class="exp-sub-heading">(On-site, Full-Time)</i></h3>
+          <h3>
+            Programmer Analyst III
+            <i class="exp-sub-heading">(On-site, Full-Time)</i>
+          </h3>
           <h3>January 2026 - Present</h3>
           <ul>
             <li>
-              Serve as the primary owner for programming requests, managing development, troubleshooting, and delivery of solutions across reporting and enterprise application workflows.
+              Serve as the primary owner for programming requests, managing
+              development, troubleshooting, and delivery of solutions across
+              reporting and enterprise application workflows.
             </li>
             <li>
-              Build and maintain web-based reports and supporting Oracle SQL logic, resolving requests related to new reports, query accuracy, and filtering.
+              Build and maintain web-based reports and supporting Oracle SQL
+              logic, resolving requests related to new reports, query accuracy,
+              and filtering.
             </li>
             <li>
-              Integrate, support, and debug enterprise API systems built with PHP and Java, maintaining reliable functionality across integrated platforms and identifying root causes for issues.
+              Integrate, support, and debug enterprise API systems built with
+              PHP and Java, maintaining reliable functionality across integrated
+              platforms and identifying root causes for issues.
             </li>
             <li>
-              Assist with monthly Linux server upgrades, using SSH to verify patch application, restart services, and ensure application environments return to an operational state.
+              Assist with monthly Linux server upgrades, using SSH to verify
+              patch application, restart services, and ensure application
+              environments return to an operational state.
             </li>
           </ul>
         </div>
 
         <div class="expCard">
           <h2>Foreko</h2>
-          <h3>Head of Software Engineering <i class="exp-sub-heading">(Full-Time)</i></h3>
+          <h3>
+            Head of Software Engineering
+            <i class="exp-sub-heading">(Remote, Full-Time)</i>
+          </h3>
           <h3>September 2025 - Present</h3>
           <ul>
             <li>
-              Lead a team of developers to create AI inventory management toolkits, following all stages of the software development lifecycle, 
-              leading development stages including planning, designing, developing, testing, and maintenance.
+              Lead a team of developers to create AI inventory management
+              toolkits, following all stages of the software development
+              lifecycle, leading development stages including planning,
+              designing, developing, testing, and maintenance.
             </li>
             <li>
-              Designed, architected, and developed native mobile iOS and Android applications with Swift, SwiftUI, Java, Android Studio.
+              Designed, architected, and developed native mobile iOS and Android
+              applications with Swift, SwiftUI, Java, Android Studio.
             </li>
             <li>
-              Collaborate with stakeholders to research product requirements, translating the requirements into production applications.
+              Collaborate with stakeholders to research product requirements,
+              translating the requirements into production applications.
             </li>
           </ul>
         </div>
         <div class="expCard">
           <h2>Holdorf Press LLC</h2>
-          <h3>Web Developer <i class="exp-sub-heading">(Internship)</i></h3>
+          <h3>
+            Web Developer <i class="exp-sub-heading">(Remote, Internship)</i>
+          </h3>
           <h3>October 2025 - Present</h3>
           <ul>
             <li>
-              Migrated and maintained the current web application to a new CMS (Wordpress), utilizing PHP, JavaScript, and SQL.
+              Migrated and maintained the current web application to a new CMS
+              (Wordpress), utilizing PHP, JavaScript, and SQL.
             </li>
             <li>
-              Gathered user requirements by collaborating with other developers and project managers, turning ideas into features.
+              Gathered user requirements by collaborating with other developers
+              and project managers, turning ideas into features.
             </li>
             <li>
-              Tasked with creating and integrating E-Commerce transactions via Stripe  and built an automated newsletter.
+              Tasked with creating and integrating E-Commerce transactions via
+              Stripe and built an automated newsletter.
             </li>
           </ul>
         </div>
         <div class="expCard">
-          <h2>State of Georgia Office of the Attorney General <i class="exp-sub-heading">(Full-Time)</i></h2>
+          <h2>
+            State of Georgia Office of the Attorney General
+            <i class="exp-sub-heading">(Hybrid, Full-Time)</i>
+          </h2>
           <h3>Information Technology Specialist</h3>
           <h3>July 2025 - Present</h3>
           <ul>
             <li>
-              Automated software deployment by writing scripts and packaging applications within Azure/Intune, 
-              reducing manual software installation efforts for end-users
+              Automated software deployment by writing scripts and packaging
+              applications within Azure/Intune, reducing manual software
+              installation efforts for end-users
             </li>
             <li>
-              Developed and documented reusable HTML email templates, standardizing agency communications.
+              Developed and documented reusable HTML email templates,
+              standardizing agency communications.
             </li>
             <li>
-              Collected requirements and authored change requests for SQL database updates (new fields, constraints), improving data quality and user workflows.
+              Collected requirements and authored change requests for SQL
+              database updates (new fields, constraints), improving data quality
+              and user workflows.
             </li>
           </ul>
         </div>
       </section>
 
-      <!-- Contact Form -->
+      <!-- Contact Section -->
       <section class="contactContainer" id="contactContainer">
         <h1>Connect With Me</h1>
 
+        <p class="contactSubheading">
+          The best way to reach me is by email, but you can also find my work
+          and connect with me through the links below.
+        </p>
+
         <div class="socialLinks">
-          <a href="mailto:kevinphitsanu22@gmail.com" target="_blank"
-            ><i data-lucide="mail"></i
-          ></a>
-          <a href="https://github.com/kphit03" target="_blank"
-            ><i data-lucide="github"></i
-          ></a>
-          <a href="https://www.linkedin.com/in/kevin-phitsanu/" target="_blank"
-            ><i data-lucide="linkedin"></i
-          ></a>
-          <a href="https://www.youtube.com/@kphitsanu" target="_blank"
-            ><i data-lucide="youtube"></i
-          ></a>
+          <a
+            href="mailto:kevinphitsanu22@gmail.com"
+            target="_blank"
+            aria-label="Email Kevin"
+          >
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+
+          <a
+            href="https://github.com/kphit03"
+            target="_blank"
+            aria-label="Kevin's GitHub"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/kevin-phitsanu/"
+            target="_blank"
+            aria-label="Kevin's LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+
+          <a
+            href="https://www.youtube.com/@kphitsanu"
+            target="_blank"
+            aria-label="Kevin's YouTube"
+          >
+            <i class="fa-brands fa-youtube"></i>
+          </a>
         </div>
 
-        <h1 class="contactSubheading">
-          The best way to contact me is directly at my email at
-          <a href="mailto:kevinphitsanu22@gmail.com" target="_blank"
-            >kevinphitsanu22@gmail.com</a
-          ><br /><span id="alternatively"
-            >Alternatively, you can directly send me a message through the
-            form</span
-          >
-        </h1>
-        <form id="contact-form">
-          <input
-            type="text"
-            name="user_name"
-            placeholder="Your Name"
-            required
-          />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <input type="text" name="subject" placeholder="Subject" required />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="6"
-            required
-          ></textarea>
-          <button type="submit">Send Message</button>
-        </form>
+        <p class="contactEmail">
+          Email:
+          <a href="mailto:kevinphitsanu22@gmail.com">
+            kevinphitsanu22@gmail.com
+          </a>
+        </p>
       </section>
     </div>
     <div id="toastContainer"></div>
